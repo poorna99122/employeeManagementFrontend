@@ -1,3 +1,4 @@
+import { EmployeeService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employee';
 
@@ -13,23 +14,18 @@ export class EmployeeListComponent implements OnInit {
   // This property we can use in employee list html
   employees : Employee[];
 
-  constructor() { }
+  constructor(private employeeService : EmployeeService) { }
 
   ngOnInit(): void {
 
-    this.employees = [{
-      "id" :1,
-      "firstName" : "Ramesh",
-      "lastName" : "suresh",
-      "emailId" : "Ramesh@gmail",
+   this.getEmployees();
 
-    },{
-      "id" :1,
-      "firstName" : "poorna",
-      "lastName" : "chandra",
-      "emailId" : "poorna@gmail",
-    }];
+  }
 
+  private getEmployees(){
+    this.employeeService.getEmployeesList().subscribe(data =>{
+      this.employees = data;
+    })
   }
 
 }
