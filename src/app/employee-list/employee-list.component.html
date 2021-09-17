@@ -1,1 +1,21 @@
-<p>employee-list works!</p>
+<h2>Employee List</h2>
+
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Email Id </th>
+    </tr>
+</thead>
+<tbody>
+    <!-- ngFor is the inbuilt angular directive which we can use to iterate array of elements or list of elements -->
+    <!-- basically employees is an array which we need to defiine in component -->
+    <tr *ngFor = "let employee of employees">
+            <td>{{ employee.firstName}}</td>
+            <td>{{ employee.lastName}}</td>
+            <td>{{ employee.emailId}}</td>
+
+    </tr>
+</tbody>
+</table>
