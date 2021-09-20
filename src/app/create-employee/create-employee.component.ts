@@ -1,3 +1,4 @@
+import { Employee } from './../employee';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateEmployeeComponent implements OnInit {
 
+
+  employee : Employee = new Employee();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmit(){
+    
   }
 
 }
